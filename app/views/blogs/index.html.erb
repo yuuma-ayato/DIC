@@ -1,0 +1,18 @@
+<header class="header">投稿一覧</header>
+<p><%= notice %></p>
+
+<div class="topic">
+<%= link_to '新しく投稿する', new_blog_path %>
+</div>
+
+  <% @blogs.each do |blog| %>
+  <article>
+    <div class="contents">
+          <h4>タイトル:<%= blog.title %></h4>
+        <p>内容:<%= blog.content %></p>
+        <%= link_to '詳細', blog_path(blog.id) %>
+        <%= link_to '編集', edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %>
+        <%= link_to '削除', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+    </div>
+    <% end %>
+  </article>
