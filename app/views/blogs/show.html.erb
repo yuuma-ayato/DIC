@@ -1,6 +1,6 @@
-<h1>投稿詳細画面</h1>
+<h2>投稿詳細画面</h2>
 <p>タイトル: <%= @blog.title %></p>
 <p id="notice"><%= notice %></p>
 <p>内容: <%= @blog.content %></p>
-<p>
+<p>投稿ユーザ名：<%= @blog.user.name %></p>
 <%= link_to "投稿一覧画面にもどる", blogs_path %>
